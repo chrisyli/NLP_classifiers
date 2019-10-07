@@ -71,7 +71,7 @@ model.add(Dense(nb_classes))
 model.add(Activation('softmax'))
 
 optimizer = Adam(lr=0.0005, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
-model.compile(optimizer='rmsprop', metrics=['accuracy'], loss='categorical_crossentropy')
+model.compile(optimizer=optimizer, metrics=['accuracy'], loss='categorical_crossentropy')
 print(model.summary())
 
 model.fit(x_train, Y_train, validation_data = (x_test, Y_test), epochs=5, \
